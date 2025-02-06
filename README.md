@@ -1,0 +1,7 @@
+- React CDN links
+- Initial setup for a React project
+- Bundlers: Parcel, Vite, Webpack
+- npm i React, ReactDOM
+- createElement, createRoot, render
+- JSX, Functional component
+- Component composition
