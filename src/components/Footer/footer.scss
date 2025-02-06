@@ -1,0 +1,13 @@
+@use "./../../../styles.scss" as *;
+
+.footer {
+    height: 150px;
+    background-color: $footer-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer-text{
+        font-weight: 500;
+    }
+}
