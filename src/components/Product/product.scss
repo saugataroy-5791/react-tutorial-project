@@ -1,0 +1,57 @@
+@use "../../styles.scss" as *;
+
+.product {
+  width: 290px;
+  border: none;
+  cursor: pointer;
+  margin: 16px;
+  &:hover {
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: 0 0 8px #0003;
+  }
+  .image {
+    width: 200px;
+    padding: 12px 0 8px;
+  }
+
+  .title {
+    font-size: 0.9rem;
+    color: $slategray-color;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1rem;
+
+    .rate {
+      display: flex;
+      align-items: center;
+      .rate-text {
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      .rate-star {
+        margin: 0 0 4px 3px;
+      }
+    }
+
+    .count {
+      font-size: 0.75rem;
+      color: $slategray-color;
+    }
+  }
+
+  .price {
+    color: $price-color;
+    font-weight: 600;
+  }
+}

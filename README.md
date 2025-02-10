@@ -6,6 +6,10 @@
 - npm i React, ReactDOM
 - createElement, createRoot, render
 
+npm create vite@latest . -- --template react
+npm install sass
+npm install react-bootstrap bootstrap
+
 # Components
 
 - React applications are built using components.

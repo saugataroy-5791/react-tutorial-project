@@ -1,0 +1,7 @@
+@use "../../styles.scss" as *;
+
+.searchBar {
+    @media (min-width: 992px) {
+        min-width: 500px;  
+    }
+}
