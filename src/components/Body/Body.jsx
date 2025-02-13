@@ -1,26 +1,12 @@
 import Container from "react-bootstrap/Container";
-import Product from "../Product/Product";
+import Products from "../Products/Products";
 import "./body.scss";
 
 const Body = () => {
   return (
     <div className="body">
       <Container>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        <Products />
       </Container>
     </div>
   );

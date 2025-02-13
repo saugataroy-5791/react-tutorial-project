@@ -1,12 +1,9 @@
-@use "../../styles.scss";
+@use "../../styles.scss" as *;
 
 .body {
   min-height: 800px;
-  background-color: white;
+  background-color: $white;
   .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     @media (max-width: 767px) {
       justify-content: center;
     }
