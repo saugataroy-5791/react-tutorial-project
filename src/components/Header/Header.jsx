@@ -5,6 +5,10 @@ import SearchBar from "../SearchBar/SearchBar";
 import LOGO_URL from "./../../assets/react.svg";
 
 const Header = () => {
+  const handleChildData = (data) => {
+    console.log("Message from Child:", data);
+  };
+
   return (
     <div className="header">
       <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
@@ -22,7 +26,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Nav className="align-items-lg-center">
-              <SearchBar />
+              <SearchBar sendData={handleChildData} />
               <Nav.Link href="#signin">Sign in</Nav.Link>
               <Nav.Link href="#fav">Favourites</Nav.Link>
               <Nav.Link href="#cart">Cart</Nav.Link>

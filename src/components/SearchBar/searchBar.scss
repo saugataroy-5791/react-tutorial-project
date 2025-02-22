@@ -1,7 +1,12 @@
 @use "../../styles.scss" as *;
 
 .searchBar {
-    @media (min-width: 992px) {
-        min-width: 500px;  
-    }
+  @media (min-width: 992px) {
+    min-width: 500px;
+  }
+  .searchbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

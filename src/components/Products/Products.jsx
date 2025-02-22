@@ -6,7 +6,6 @@ import { products } from "../../utils/constants";
 
 const Products = () => {
   const [productsList, setProductsList] = useState(products);
-
   return (
     <div className="prodcuts mt-3">
       <div className="button-container">
