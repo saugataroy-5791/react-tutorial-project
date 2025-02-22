@@ -1,7 +1,7 @@
 @use "../../styles.scss" as *;
 
-.prodcuts {
-  .products-list {
+.product-list {
+  .list {
     display: flex;
     flex-wrap: wrap;
   }

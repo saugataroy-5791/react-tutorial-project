@@ -1,6 +1,6 @@
-export const PRODUCTS_URL = "https://fakestoreapi.com/products";
+export const PRODUCTS_URL = "https://fakestoreapi.com/products/";
 
-export const products = [
+export const productList = [
   {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",

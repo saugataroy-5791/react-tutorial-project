@@ -83,8 +83,12 @@ npm install react-bootstrap bootstrap
 - Lazy Loading: Improve performance
 - useNavigate: Programmatic navigation
 - useSearchParams: Manage query strings
-- 404 Handling: Catch-all route
+- 404 Handling: Catch-all route, useRouteError
 - Scroll Restoration: Maintain scroll position
+
+# Error Boundaries
+
+- Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI.
 
 # Lifecycle Methods (Class Components) & Effects (Functional Components)
 
@@ -129,10 +133,6 @@ npm install react-bootstrap bootstrap
 
 - HOCs are functions that take a component and return a new component with additional props or behavior.
 - They allow for code reuse and abstraction.
-
-# Error Boundaries
-
-- Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI.
 
 # Shallow Rendering
 

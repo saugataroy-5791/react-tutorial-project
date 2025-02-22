@@ -1,12 +1,12 @@
 import Container from "react-bootstrap/Container";
-import Products from "../Products/Products";
+import ProductList from "../ProductList/ProductList";
 import "./body.scss";
 
 const Body = () => {
   return (
-    <div className="body">
+    <div className="body content">
       <Container>
-        <Products />
+        <ProductList />
       </Container>
     </div>
   );

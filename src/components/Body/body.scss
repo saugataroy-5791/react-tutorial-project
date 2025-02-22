@@ -1,7 +1,6 @@
 @use "../../styles.scss" as *;
 
 .body {
-  min-height: 800px;
   background-color: $white;
   .container {
     @media (max-width: 767px) {
