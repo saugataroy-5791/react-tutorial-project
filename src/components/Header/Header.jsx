@@ -7,9 +7,12 @@ import LOGO_URL from "./../../assets/react.svg";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./header.scss";
+import useOnlineStatus from "../../utils/hooks/useOnlineStatus";
 
 const Header = () => {
   const [loginText, setLoginText] = useState("Login");
+  const isOnline = useOnlineStatus();
+
   const handleChildData = (data) => {
     console.log("Message from Child:", data);
   };
@@ -31,13 +34,14 @@ const Header = () => {
                 height="30"
                 className="d-inline-block align-top"
               />{" "}
-              React
+              React {isOnline ? "🟢" : "🔴"}
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Nav className="align-items-lg-center">
               <SearchBar sendData={handleChildData} />
+
               <Link className="nav-link me-2" to="/favourites">
                 Favourites
               </Link>

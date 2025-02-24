@@ -1,14 +1,17 @@
+import React, { lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Basket from "./components/Basket/Basket";
-import Favourites from "./components/Favourites/Favourites";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Body from "./components/Body/Body";
-import ProductList from "./components/ProductList/ProductList";
 import Login from "./components/Login/Login";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
+import Loader from "./components/Loader/Loader";
+import Container from "react-bootstrap/Container";
+
+const Favourites = lazy(() => import("./components/Favourites/Favourites"));
 
 const appRouter = createBrowserRouter([
   {
@@ -33,7 +36,19 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/favourites",
-        element: <Favourites />,
+        element: (
+          <Suspense
+            fallback={
+              <div className="content">
+                <Container>
+                  <Loader />
+                </Container>
+              </div>
+            }
+          >
+            <Favourites />
+          </Suspense>
+        ),
       },
       {
         path: "/login",

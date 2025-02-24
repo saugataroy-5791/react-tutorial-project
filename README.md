@@ -66,6 +66,8 @@ npm install react-bootstrap bootstrap
   - useState → Manages state.
   - useEffect → Handles side effects (e.g., API calls, subscriptions).
   - useContext → Accesses context values without prop drilling.
+  - useParams → Accesses dynamic params from the current URL.
+  - useNavigate → Returns a function that lets you navigate programmatically.
 
 # Custom Hooks
 
@@ -79,7 +81,12 @@ npm install react-bootstrap bootstrap
 - Loaders: Fetch databefore rendering
 - Actions: Handle form submissions
 - Nested Routes: Organize layouts better
-- Route Guards: Protect private routes
+- Route Guards:
+  - Private Route
+  - Role-Based Route
+  - Guest Route
+  - Lazy Loading Guard
+  - API-Based Guard
 - Lazy Loading: Improve performance
 - useNavigate: Programmatic navigation
 - useSearchParams: Manage query strings

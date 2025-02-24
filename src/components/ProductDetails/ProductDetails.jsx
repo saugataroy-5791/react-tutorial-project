@@ -1,29 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import { useNavigate, useParams } from "react-router-dom";
-import { PRODUCTS_URL } from "../../utils/constants";
 import Loader from "../Loader/Loader";
 import "./productDetails.scss";
 import Button from "react-bootstrap/Button";
+import useProductDetails from "../../utils/hooks/useProductDetails";
 
 const ProductDetails = () => {
-  const [productInfo, setProductInfo] = useState(null);
   const { id } = useParams();
+  const productInfo = useProductDetails(id);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetchProductInfo();
-  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-
-  const fetchProductInfo = async () => {
-    const data = await fetch(PRODUCTS_URL + id);
-    const productInfo = await data.json();
-    setProductInfo(productInfo);
-  };
 
   const handleBackBtnClick = () => {
     navigate("/");
