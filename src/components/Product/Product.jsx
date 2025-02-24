@@ -30,4 +30,16 @@ const Product = (props) => {
   );
 };
 
+// Higher Order Component
+export const MensProduct = (Product) => {
+  return (props) => {
+    return (
+      <div className="mens-product">
+        <label>Men's Clothing</label>
+        <Product {...props} />
+      </div>
+    );
+  };
+};
+
 export default Product;

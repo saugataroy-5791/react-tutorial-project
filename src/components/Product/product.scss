@@ -59,3 +59,18 @@
     font-weight: 600;
   }
 }
+
+.mens-product {
+  position: relative;
+  label {
+    z-index: 999;
+    position: absolute;
+    background: $black;
+    color: $white;
+    top: 16px;
+    left: 16px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.75rem;
+  }
+}

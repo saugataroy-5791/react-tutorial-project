@@ -3,12 +3,18 @@ import Body from "./components/Body/Body";
 import Footer from "./components/Footer/Footer";
 import "./styles.scss";
 import { Outlet } from "react-router-dom";
+import { UserProvider } from "./utils/UserContext";
+import { SearchProvider } from "./utils/SearchContext";
 
 function App() {
   return (
     <>
-      <Header />
-      <Outlet />
+      <SearchProvider>
+        <Header />
+        <UserProvider>
+          <Outlet />
+        </UserProvider>
+      </SearchProvider>
       <Footer />
     </>
   );

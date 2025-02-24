@@ -141,6 +141,10 @@ npm install react-bootstrap bootstrap
 - HOCs are functions that take a component and return a new component with additional props or behavior.
 - They allow for code reuse and abstraction.
 
+# Controlled & Uncontrolled Components
+
+-
+
 # Shallow Rendering
 
 - Shallow rendering allows you to test components without worrying about their children.

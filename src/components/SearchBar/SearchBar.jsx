@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./searchBar.scss";
+import { SearchContext } from "../../utils/SearchContext";
 
-const SearchBar = ({ sendData }) => {
-  const [searchText, setSearchText] = useState("");
+const SearchBar = () => {
+  const [searchInput, setSearchInput] = useState("");
+  const { setSearchText } = useContext(SearchContext);
 
   const handleSearchChange = (e) => {
-    setSearchText(e.target.value);
+    setSearchInput(e.target.value);
+    if (e.target.value === "") {
+      setSearchText("");
+    }
   };
 
   const handleSearchClick = () => {
-    sendData(searchText);
+    setSearchText(searchInput);
   };
 
   return (
@@ -23,7 +28,7 @@ const SearchBar = ({ sendData }) => {
         <Form.Control
           type="text"
           placeholder="Search for anything"
-          value={searchText}
+          value={searchInput}
           onChange={handleSearchChange}
         />
         <Button variant="primary" className="ms-2" onClick={handleSearchClick}>

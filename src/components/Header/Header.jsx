@@ -4,22 +4,21 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import LOGO_URL from "./../../assets/react.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import "./header.scss";
 import useOnlineStatus from "../../utils/hooks/useOnlineStatus";
+import { UserContext } from "../../utils/UserContext";
 
 const Header = () => {
   const [loginText, setLoginText] = useState("Login");
   const isOnline = useOnlineStatus();
 
-  const handleChildData = (data) => {
-    console.log("Message from Child:", data);
-  };
-
   const handleLoginClick = () => {
     loginText === "Login" ? setLoginText("Logout") : setLoginText("Login");
   };
+
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <div className="header">
@@ -34,13 +33,13 @@ const Header = () => {
                 height="30"
                 className="d-inline-block align-top"
               />{" "}
-              React {isOnline ? "🟢" : "🔴"}
+              React {isOnline ? "🟢" : "🔴"} {loggedInUser}
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Nav className="align-items-lg-center">
-              <SearchBar sendData={handleChildData} />
+              <SearchBar />
 
               <Link className="nav-link me-2" to="/favourites">
                 Favourites
