@@ -34,13 +34,7 @@ const ProductDetails = () => {
           <Loader />
         ) : (
           <div className="details">
-            <div className="image mt-4">
-              <img src={productInfo.image} width="300" height="auto" />
-            </div>
-            <h3 className="title mt-3">{productInfo.title}</h3>
-            <p className="description">{productInfo.description}</p>
-            <h5 className="price bold">CA${productInfo.price}</h5>
-            <div className="button-container mt-3">
+            <div className="button-container mt-4">
               <Button
                 variant="outline-primary"
                 className="me-2"
@@ -52,6 +46,12 @@ const ProductDetails = () => {
                 Back to home
               </Button>
             </div>
+            <div className="image mt-3">
+              <img src={productInfo.image} width="300" height="auto" />
+            </div>
+            <h3 className="title mt-3">{productInfo.title}</h3>
+            <p className="description">{productInfo.description}</p>
+            <h5 className="price bold">CA${productInfo.price}</h5>
           </div>
         )}
       </Container>
