@@ -120,11 +120,24 @@ npm install react-bootstrap bootstrap
 # Context API (State Management)
 
 - Context API avoids prop drilling and provides global state management.
+- createContext()
+- Context.Provider
 
 # Redux (State Management)
 
 - Redux is a state management library used to manage global state in large React applications.
 - It uses a single store to hold the application’s state, and components can subscribe to the store or dispatch actions to update it.
+- Global Object
+- Logical partitions: Slices
+- Any event will dispatch an Action
+- Action will call a function, Reducer function.
+- Reducer function updates the slice of Redux store.
+- Selector i.e. subscribing to the store is used to read dat from slice of Redux store and update the component.
+- configureStore()
+- Provider
+- createSlice()
+- useSelector()
+- useDispatch()
 
 # Context vs Redux
 
@@ -143,7 +156,8 @@ npm install react-bootstrap bootstrap
 
 # Controlled & Uncontrolled Components
 
--
+- Controlled: Managed by React, re-renders on every input change
+- Uncontrolled: Managed by DOM, doesn't re-render on every input change
 
 # Shallow Rendering
 

@@ -74,3 +74,14 @@
     font-size: 0.75rem;
   }
 }
+
+.basket-product {
+  position: relative;
+  width: auto;
+  display: flex;
+  .close-btn {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+  }
+}

@@ -2,6 +2,10 @@ import { Card } from "react-bootstrap";
 import "./product.scss";
 import STAR_URL from "./../../assets/star.svg";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import CloseButton from "react-bootstrap/CloseButton";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../../utils/slices/basketSlice";
 
 const Product = (props) => {
   const { productData } = props;
@@ -37,6 +41,24 @@ export const MensProduct = (Product) => {
       <div className="mens-product">
         <label>Men's Clothing</label>
         <Product {...props} />
+      </div>
+    );
+  };
+};
+
+export const BasketProduct = (Product) => {
+  return (props) => {
+    const { productData } = props;
+    const dispatch = useDispatch();
+    const handleCloseBtnClick = (data) => {
+      dispatch(removeItem(data.id));
+    };
+    return (
+      <div className="basket-product">
+        <Product {...props} />
+        <div className="close-btn">
+          <CloseButton onClick={() => handleCloseBtnClick(productData)} />
+        </div>
       </div>
     );
   };

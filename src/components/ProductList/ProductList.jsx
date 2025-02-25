@@ -5,11 +5,12 @@ import { useContext, useEffect, useState } from "react";
 // import { productList } from "../../utils/constants";
 import { PRODUCTS_URL } from "../../utils/constants";
 import Loader from "../Loader/Loader";
-import { SearchContext } from "../../utils/SearchContext";
+import { SearchContext } from "../../utils/context/SearchContext";
 
 const ProductList = () => {
   const [productsList, setProductsList] = useState(null);
   const { searchText } = useContext(SearchContext);
+  const MensProductCategory = MensProduct(Product);
 
   useEffect(() => {
     fetchProducts();
@@ -33,7 +34,6 @@ const ProductList = () => {
   };
 
   const searchProducts = (searchText) => {
-    console.log(searchText);
     if (searchText) {
       const filteredProductsList = productsList.filter((item) => {
         return item?.title.toLowerCase().includes(searchText);
@@ -41,8 +41,6 @@ const ProductList = () => {
       setProductsList(filteredProductsList);
     }
   };
-
-  const MensProductCategory = MensProduct(Product);
 
   return productsList === null ? (
     <Loader />

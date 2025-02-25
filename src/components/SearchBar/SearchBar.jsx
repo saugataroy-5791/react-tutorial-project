@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./searchBar.scss";
-import { SearchContext } from "../../utils/SearchContext";
+import { SearchContext } from "../../utils/context/SearchContext";
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");

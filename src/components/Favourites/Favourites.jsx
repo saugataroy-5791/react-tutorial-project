@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Container from "react-bootstrap/Container";
-import { UserContext } from "../../utils/UserContext";
+import { UserContext } from "../../utils/context/UserContext";
 
 const Favourites = () => {
   const { loggedInUser } = useContext(UserContext);

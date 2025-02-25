@@ -8,7 +8,8 @@ import { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import "./header.scss";
 import useOnlineStatus from "../../utils/hooks/useOnlineStatus";
-import { UserContext } from "../../utils/UserContext";
+import { UserContext } from "../../utils/context/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [loginText, setLoginText] = useState("Login");
@@ -19,6 +20,10 @@ const Header = () => {
   };
 
   const { loggedInUser } = useContext(UserContext);
+
+  const basketItems = useSelector((store) => {
+    return store.basket.items;
+  });
 
   return (
     <div className="header">
@@ -45,7 +50,7 @@ const Header = () => {
                 Favourites
               </Link>
               <Link className="nav-link me-4" to="/basket">
-                Cart
+                Cart ({basketItems.length})
               </Link>
               <Button
                 variant="outline-light"
